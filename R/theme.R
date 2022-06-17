@@ -12,9 +12,18 @@
 library(ggplot2)
 library(showtext)
 
-hud_theme <- function(medium = "web", layout = "big") {
-  font_path <- paste(dirname(sys.frame(1)$ofile), "fonts", sep = "/")
-  # font_path <- paste(getwd(), "R/fonts", sep = "/")
+# This is a crummy way to find the font path, but here() and sys.frame(1)$ofile don't work
+find_path <- function() {
+  for (lp in .libPaths()) {
+    p <- paste(lp, "hud.theme/fonts", sep = "/")
+    if (dir.exists(p)) {
+      return(p)
+    }
+  }
+}
+
+load_fonts <- function() {
+  font_path <- find_path()
   fonts <- list(
     c("National", "FiraSans-Regular.ttf"),
     c("National Black", "FiraSans-Black.ttf"),
@@ -30,6 +39,10 @@ hud_theme <- function(medium = "web", layout = "big") {
     font_add(f[1], paste(font_path, f[2], sep = "/"))
   }
   showtext_auto()
+}
+
+hud_theme <- function(medium = "web", layout = "big") {
+  load_fonts()
 
   # Base
   b <- theme(text             = element_text(family = "National Light"),
