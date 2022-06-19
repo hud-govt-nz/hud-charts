@@ -2,7 +2,7 @@
 #'
 #' ggplot2 theme generation function for HUD styles.
 #' @name hud_theme
-#' @param medium "print" (white background theme) or "web" (dark background theme)
+#' @param medium "web" (dark background theme) or "print" (white background theme)
 #' @param layout "big" or "small
 #' @keywords hud ggplot2 themes
 #' @export
@@ -56,16 +56,7 @@ hud_theme <- function(medium = "web", layout = "big") {
              legend.key       = element_blank())
 
   # Medium
-  if (medium == "print") {
-    c <- theme(plot.background    = element_rect(fill = "#FFFFFF"),
-               legend.background  = element_rect(fill = "#FFFFFF"),
-               text               = element_text(color = "#222423"),
-               axis.text          = element_text(color = "#222423"),
-               plot.title         = element_text(color = "#003E52"),
-               plot.caption       = element_text(color = "#909090"),
-               panel.grid.major.y = element_line(color = "#F1F1F1"))
-  }
-  else if (medium == "web") {
+  if (medium == "web") {
     c <- theme(plot.background    = element_rect(fill = "#00232F"),
                legend.background  = element_rect(fill = "#00232F"),
                text               = element_text(color = "#FFFFFF"),
@@ -73,6 +64,15 @@ hud_theme <- function(medium = "web", layout = "big") {
                plot.title         = element_text(color = "#FFFFFF"),
                plot.caption       = element_text(color = "#CCCCCC"),
                panel.grid.major.y = element_line(color = "#666666"))
+  }
+  else if (medium == "print") {
+    c <- theme(plot.background    = element_rect(fill = "#FFFFFF"),
+               legend.background  = element_rect(fill = "#FFFFFF"),
+               text               = element_text(color = "#222423"),
+               axis.text          = element_text(color = "#222423"),
+               plot.title         = element_text(color = "#003E52"),
+               plot.caption       = element_text(color = "#909090"),
+               panel.grid.major.y = element_line(color = "#F1F1F1"))
   }
   else {
     stop("Invalid medium (Expected: 'web' or 'print')!")
