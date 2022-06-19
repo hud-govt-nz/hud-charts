@@ -12,13 +12,13 @@
 library(ggplot2)
 
 hud_colours <- function(medium = "web", colours = 2) {
-
   if (medium == "print") {
     if (colours <= 2) {
-      palette <- c("#003E52","#FFC04A")
+      palette <- c("#00232F", "#FFC04A")
     }
-    else if (colours <= 3) {
-      palette <- c("#003E52","#A4343E", "#00826E")
+    else if (colours <= 4) {
+      warning("Sorry, not terribly well-considered colour choices, but kinda fine for now")
+      palette <- c("#FFB219", "#003E52","#A4343E", "#00826E", "#FFB219")
     }
     else {
       stop("Sorry I don't have that many colours! (Make your own with: [scale_color_manual(values = palette)]!")
@@ -26,10 +26,11 @@ hud_colours <- function(medium = "web", colours = 2) {
   }
   else if (medium == "web") {
     if (colours <= 2) {
-      palette <- c("#FFC04A","#62B6F3")
+      palette <- c("#FFC04A", "#62B6F3")
     }
-    else if (colours <= 3) {
-      palette <- c("#FFC04A","#A4343E", "#00826E")
+    else if (colours <= 4) {
+      warning("Sorry, not terribly well-considered colour choices, but kinda fine for now")
+      palette <- c("#FFC04A", "#DF8881", "#00C48D", "#62B6F3")
     }
     else {
       stop("Sorry I don't have that many colours! (Make your own with: [scale_color_manual(values = palette)]!")

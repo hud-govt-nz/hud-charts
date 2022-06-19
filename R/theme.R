@@ -70,7 +70,7 @@ hud_theme <- function(medium = "web", layout = "big") {
                legend.background  = element_rect(fill = "#FFFFFF"),
                text               = element_text(color = "#222423"),
                axis.text          = element_text(color = "#222423"),
-               plot.title         = element_text(color = "#003E52"),
+               plot.title         = element_text(color = "#00232F"),
                plot.caption       = element_text(color = "#909090"),
                panel.grid.major.y = element_line(color = "#F1F1F1"))
   }
