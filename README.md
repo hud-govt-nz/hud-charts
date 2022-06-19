@@ -2,8 +2,9 @@
 
 ### Installation from Github (Recommended)
 To use this library from the Github source, you'll need:
-1. Github access to `hud-govt-nz/hud-themes`.
+1. Github access to `hud-govt-nz/hud-themes` (ie. This).
 2. A Github [Personal Access Token](https://github.com/settings/tokens). Check the `repo` (full control of private repositories) access box.
+3. You'll need to activate HUD SSO on the token.
 
 You'll need `devtools::install_github` to install the package:
 ```
