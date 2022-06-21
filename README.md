@@ -1,4 +1,5 @@
 # HUD theme and colours for ggplot2
+**CAUTION: This repo is public. Do not include sensitive data or key materials.**
 
 ### Installation from Github (Recommended)
 To use this library from the Github source, you'll need:
@@ -9,7 +10,7 @@ To use this library from the Github source, you'll need:
 You'll need `devtools::install_github` to install the package:
 ```
 library(devtools)
-install_github("hud-govt-nz/hud-themes", auth_token="[TOKEN GOES HERE]")
+install_github("hud-govt-nz/public-hud-themes", auth_token="[TOKEN GOES HERE]")
 ```
 
 I'm working on getting the IT folks to allow us to make repos public. This would mean we can do the same thing without a PAT, eventually.
@@ -20,7 +21,7 @@ You can also just download it and use it locally, but you'll have to update the 
 
 ```
 library(devtools)
-install_local("[PATH GOES HERE]/hud-themes")
+install_local("[PATH GOES HERE]/public-hud-themes")
 ```
 
 
