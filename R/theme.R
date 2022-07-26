@@ -25,13 +25,13 @@ find_path <- function() {
 load_fonts <- function() {
   font_path <- find_path()
   fonts <- list(
-    c("National", "national-web-regular.woff2"),
-    c("National Black", "national-web-black.woff2"),
-    c("National Book", "national-web-book.woff2"),
-    c("National Light", "national-web-light.woff2"),
-    c("National Medium", "national-web-medium.woff2"),
-    c("National SemiBold", "national-web-semibold.woff2"),
-    c("National Bold", "national-web-bold.woff2")
+    c("National", "national-web-regular.ttf"),
+    c("National Black", "national-web-black.ttf"),
+    c("National Book", "national-web-book.ttf"),
+    c("National Light", "national-web-light.ttf"),
+    c("National Medium", "national-web-medium.ttf"),
+    c("National SemiBold", "national-web-semibold.ttf"),
+    c("National Bold", "national-web-bold.ttf")
   )
   for (f in fonts) {
     font_add(f[1], paste(font_path, f[2], sep = "/"))
