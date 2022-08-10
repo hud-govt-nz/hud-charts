@@ -11,7 +11,9 @@
 
 library(ggplot2)
 
-hud_colours <- function(medium = "web", colours = 2) {
+# Reverse colours by default, this means the last series (which is on the top
+# layer of the chart) gets the first colour in the palette
+hud_colours <- function(medium = "web", colours = 2, reverse = TRUE) {
   if (medium == "print") {
     if (colours <= 2) {
       palette <- c("#00232F", "#FFC04A")
@@ -39,5 +41,12 @@ hud_colours <- function(medium = "web", colours = 2) {
   else {
     stop("Invalid medium (Expected: 'web' or 'print')!")
   }
-  return(scale_color_manual(values = palette))
+  palette <- palette[1:colours]
+  if (reverse) {
+    palette <- rev(palette)
+    # The legend has to be reversed so that the top layer of the chart matches with
+    # the first colour of the legend
+    guide <- guide_legend(reverse = TRUE)
+  }
+  scale_color_manual(values = palette, guide = guide)
 }
