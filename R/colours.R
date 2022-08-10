@@ -16,9 +16,9 @@ hud_colours <- function(medium = "web", colours = 2) {
     if (colours <= 2) {
       palette <- c("#00232F", "#FFC04A")
     }
-    else if (colours <= 4) {
+    else if (colours <= 5) {
       warning("Sorry, not terribly well-considered colour choices, but kinda fine for now")
-      palette <- c("#FFB219", "#003E52","#A4343E", "#00826E", "#FFB219")
+      palette <- c("#003E52", "#A4343E", "#00826E", "#FFB219", "#FFB219")
     }
     else {
       stop("Sorry I don't have that many colours! (Make your own with: [scale_color_manual(values = palette)]!")
