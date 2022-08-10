@@ -1,8 +1,9 @@
+library(devtools)
+install_github("hud-govt-nz/public-hud-themes", force = TRUE)
+
 library(tidyverse)
 library(ggplot2)
 library(showtext)
-library(devtools)
-install_local("C:/Users/Keith.Ng/OneDrive - Ministry of Housing and Urban Development/Code/public-hud-themes", force = TRUE)
 library(hud.theme)
 
 # Set series order (most important series **last**)
