@@ -48,5 +48,8 @@ hud_colours <- function(medium = "web", colours = 2, reverse = TRUE) {
     # the first colour of the legend
     guide <- guide_legend(reverse = TRUE)
   }
+  if (colours == 1) {
+    guide <- guides(color = "none")
+  }
   scale_color_manual(values = palette, guide = guide)
 }
