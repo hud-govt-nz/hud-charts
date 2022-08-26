@@ -1,11 +1,11 @@
-# HUD theme and colours for ggplot2
+# HUD charting tools
 **CAUTION: This repo is public. Do not include sensitive data or key materials.**
 
 ### Installation from Github (Recommended)
 You'll need `devtools::install_github` to install the package:
 ```
 library(devtools)
-install_github("hud-govt-nz/public-hud-themes")
+install_github("hud-govt-nz/hud-charts")
 ```
 
 
@@ -14,7 +14,7 @@ You can also just download it and use it locally, but you'll have to update the 
 
 ```
 library(devtools)
-install_local("[PATH GOES HERE]/public-hud-themes")
+install_local("[PATH GOES HERE]/hud-charts")
 ```
 
 
@@ -23,7 +23,7 @@ To use the package (NOTE: You'll need to load `showtext` as well). See `example/
 ```
 library(ggplot2)
 library(showtext)
-library(hud.theme)
+library(hud.charts)
 
 df <- read.csv(file = "ird-kiwisaver-parsed.csv")
 df$period <- as.Date(df$period)

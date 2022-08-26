@@ -1,10 +1,10 @@
 library(devtools)
-install_github("hud-govt-nz/public-hud-themes", force = TRUE)
+install_github("hud-govt-nz/hud-charts", force = TRUE)
 
 library(tidyverse)
 library(ggplot2)
 library(showtext)
-library(hud.theme)
+library(hud.charts)
 
 # Set series order (most important series **last**)
 s <- c("Business purposes" = "BUS",
