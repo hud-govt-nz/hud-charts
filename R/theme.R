@@ -4,7 +4,7 @@ library(showtext)
 # This is a crummy way to find the font path, but here() and sys.frame(1)$ofile don't work
 find_path <- function() {
   for (lp in .libPaths()) {
-    p <- paste(lp, "hud.theme/fonts", sep = "/")
+    p <- paste(lp, "hud.charts/fonts", sep = "/")
     if (dir.exists(p)) return(p)
     else print(p)
   }
