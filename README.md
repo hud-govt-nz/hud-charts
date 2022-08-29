@@ -38,9 +38,16 @@ hud_colours(medium = "print", colours = 2)
 ### Maintaining this package
 If you make changes to this package, you'll need to rerun document from the root directory to update all the R generated files.
 ```
-library(devtools)
-install_github("klutometis/roxygen")
-library(roxygen2)
+install.packages("roxygen2")
+roxygenise()
+```
 
-document()
+I had real problems installing `roxygen2`, because there's a problem with the upstream library `cli`. It's been fixed, but it's not in the CRAN version as of 29-08-2022. You might need the Github version:
+```
+library(devtools)
+install_github("r-lib/cli")
+install_github("r-lib/roxygen2")
+library(cli)
+library(roxygen2)
+roxygenise()
 ```
