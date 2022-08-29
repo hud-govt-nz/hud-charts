@@ -2,54 +2,60 @@
 #'
 #' ggplot2 colour scale generation function for HUD styles.
 #' @name hud_colours
-#' @param medium "print" (white background theme) or "web" (dark background theme)
 #' @param colours Required number of colours
+#' @param palette_type Scheme type: "single", "double", "categorical"
+#' @param medium "print" (white background theme) or "web" (dark background theme)
+#' @param reverse Whether to reverse the colour scheme - on by default
 #' @keywords hud ggplot2 colours
 #' @export
 #' @examples
-#' hud_colours(medium = "web", colours = 2)
+#' hud_colours(2, palette_type = "single", medium = "web")
 
 library(ggplot2)
 
 # Reverse colours by default, this means the last series (which is on the top
 # layer of the chart) gets the first colour in the palette
-hud_colours <- function(medium = "web", colours = 2, reverse = TRUE) {
+hud_colours <- function(palette_size = 5, palette_type = "categorical", medium = "web", reverse = TRUE) {
+  # Pick a palette
+  palette <- NULL
   if (medium == "print") {
-    if (colours <= 2) {
+    # Focus on a primary series, with an optional secondary series
+    if (palette_type == "single") {
+      palette <- c("#00232F", "#D0E3EF")
+    }
+    # Focus on two series
+    else if (palette_type == "double") {
       palette <- c("#00232F", "#FFC04A")
     }
-    else if (colours <= 5) {
-      warning("Sorry, not terribly well-considered colour choices, but kinda fine for now")
+    # Categorical colours
+    else if (palette_type == "categorical") {
       palette <- c("#003E52", "#A4343E", "#00826E", "#FFB219", "#FFB219")
-    }
-    else {
-      stop("Sorry I don't have that many colours! (Make your own with: [scale_color_manual(values = palette)]!")
     }
   }
   else if (medium == "web") {
-    if (colours <= 2) {
+    if (palette_type == "single") {
+      palette <- c("#00232F", "#D0E3EF")
+    }
+    else if (palette_type == "double") {
       palette <- c("#FFC04A", "#62B6F3")
     }
-    else if (colours <= 4) {
-      warning("Sorry, not terribly well-considered colour choices, but kinda fine for now")
+    else if (palette_type == "categorical") {
       palette <- c("#FFC04A", "#DF8881", "#00C48D", "#62B6F3")
     }
-    else {
-      stop("Sorry I don't have that many colours! (Make your own with: [scale_color_manual(values = palette)]!")
-    }
   }
-  else {
-    stop("Invalid medium (Expected: 'web' or 'print')!")
+
+  # Validate
+  if (is.null(palette)) {
+    stop("No such scheme/medium!")
   }
-  palette <- palette[1:colours]
-  if (reverse) {
-    palette <- rev(palette)
-    # The legend has to be reversed so that the top layer of the chart matches with
-    # the first colour of the legend
-    guide <- guide_legend(reverse = TRUE)
+  if (palette_size > length(palette)) {
+    stop("The scheme you have selected doesn't have enough colours!")
   }
-  if (colours == 1) {
-    guide <- guides(color = "none")
-  }
+
+  # Produce colour scale
+  palette <- palette[1:palette_size]
+  if (reverse) palette <- rev(palette)
+  if (palette_size == 1) guide <- guides(color = "none")
+  else guide <- guide_legend(reverse = reverse)
   scale_color_manual(values = palette, guide = guide)
 }
