@@ -53,8 +53,8 @@ hud_colours <- function(palette_size = 5, palette_type = "categorical", medium =
 
   # Produce colour scale
   palette <- palette[1:palette_size]
+  guide <- NULL
   if (reverse) palette <- rev(palette)
-  if (palette_size == 1) guide <- guides(color = "none")
-  else guide <- guide_legend(reverse = reverse)
+  if (palette_size > 1) guide <- guide_legend(reverse = reverse)
   scale_color_manual(values = palette, guide = guide)
 }
