@@ -38,7 +38,7 @@ hud_colours(medium = "print", colours = 2)
 ### Maintaining this package
 If you make changes to this package, you'll need to rerun document from the root directory to update all the R generated files.
 ```
-library("devtools")
+library(devtools)
 install_github("klutometis/roxygen")
 library(roxygen2)
 

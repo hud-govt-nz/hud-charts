@@ -1,6 +1,6 @@
 #' HUD Themes
 #'
-#' ggplot2 theme generation function for HUD styles.
+#' ggplot2 theme generator using HUD styles.
 #' @name hud_theme
 #' @param medium "web" (dark background theme) or "print" (white background theme)
 #' @param layout "big" or "small
@@ -16,9 +16,8 @@ library(showtext)
 find_path <- function() {
   for (lp in .libPaths()) {
     p <- paste(lp, "hud.theme/fonts", sep = "/")
-    if (dir.exists(p)) {
-      return(p)
-    }
+    if (dir.exists(p)) return(p)
+    else print(p)
   }
 }
 
@@ -72,9 +71,7 @@ hud_theme <- function(medium = "web", layout = "big") {
                plot.caption       = element_text(color = "#909090"),
                panel.grid.major.y = element_line(color = "#F1F1F1"))
   }
-  else {
-    stop("Invalid medium (Expected: 'web' or 'print')!")
-  }
+  else stop("Invalid medium (Expected: 'web' or 'print')!")
 
   # Layout
   if (layout == "big") {
@@ -97,8 +94,6 @@ hud_theme <- function(medium = "web", layout = "big") {
                legend.position = "bottom",
                legend.text     = element_text(margin = margin(r = 12)))
   }
-  else {
-    stop("Invalid layout (Expected: 'big' or 'small')!")
-  }
+  else stop("Invalid layout (Expected: 'big' or 'small')!")
   return(b + c + l)
 }
