@@ -48,6 +48,8 @@ hud_theme <- function(medium = "web", layout = "big") {
              panel.background = element_blank(),
              panel.border     = element_blank(),
              panel.grid       = element_blank(),
+             strip.background = element_blank(),
+             strip.text.x     = element_text(hjust = 1),
              legend.title     = element_blank(),
              legend.key       = element_blank())
 
