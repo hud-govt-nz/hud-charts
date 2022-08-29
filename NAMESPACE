@@ -2,5 +2,7 @@
 
 export(hud_colours)
 export(hud_theme)
+export(make_long)
+export(make_regional)
 export(plot_line)
 export(plot_regional_lines)

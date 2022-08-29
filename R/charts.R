@@ -1,8 +1,59 @@
+library(tidyverse)
 library(ggplot2)
 library(showtext)
 
-source("R/colours.R")
-source("R/theme.R")
+#' Wide-to-Long
+#'
+#' Pivots wider, parses dates, renames and reorders levels for series.
+#' @name make_long
+#' @param df_wide Wide dataframe (must have a period column)
+#' @param s Named vector containing levels for the series column, in the desired order
+#' @param x Column name for the period column
+#' @keywords hud clean long
+#' @export
+#' @examples
+#' make_long(df_wide, c("Seasonal" = "BLDM.SFTZ1100A1S", "Actual" = "BLDM.SFTZ1100A1A"))
+make_long <- function(df_wide, s = NULL, x = "period") {
+  df <- rename(df_wide, period = x)
+  if (is.null(s)) {
+    s <- df %>% select(-period) %>% colnames()
+    names(s) <- s
+  }
+  df %>%
+    select(period, all_of(s)) %>%
+    pivot_longer(-period, names_to = "series") %>%
+    # Line layering puts the first line at the bottom,
+    # which means we have to reverse the order from the input...
+    mutate(period = as.Date(period),
+           series = factor(series, levels = rev(names(s))))
+}
+
+#' Long-to-regional
+#'
+#' Using one series as a national baseline, create regional/national pairs for each region.
+#' Region will go in region column, regional/national will go into a series column.
+#' @name make_regional
+#' @param df_long Long dataframe
+#' @param r Column name for the region column
+#' @param x Column name for the period column
+#' @param y Column name for the value column
+#' @keywords hud clean regional
+#' @export
+#' @examples
+#' make_regional(df_long)
+make_regional <- function(
+    df_long, national = "National", r = "region",
+    x = "period", y = "value") {
+  s <- c("Region" = paste0(y, ""), "National" = paste0(y, "_y"))
+  df <- rename(df_long, region = r)
+  n_df <- filter(df, region == national)
+  df %>%
+    filter(region != national) %>%
+    left_join(n_df, by = x, suffix = c("", "_y")) %>%
+    select(x, region, s) %>%
+    pivot_longer(-c(x, region), names_to = "series") %>%
+    mutate(series = factor(series, levels = rev(names(s))))
+}
 
 #' HUD Line Chart
 #'
