@@ -3,8 +3,22 @@
 \name{hud_colours}
 \alias{hud_colours}
 \title{HUD Colours}
+\usage{
+hud_colours(
+  palette_size = 5,
+  palette_type = "categorical",
+  medium = "web",
+  reverse = TRUE
+)
+}
 \arguments{
+\item{palette_type}{Scheme type: "single", "double", "categorical"}
+
 \item{medium}{"print" (white background theme) or "web" (dark background theme)}
+
+\item{reverse}{Whether to reverse the colour scheme - on by default. This means
+the last series (which is on the top layer of the chart) gets the first colour
+in the palette}
 
 \item{colours}{Required number of colours}
 }
@@ -12,7 +26,7 @@
 ggplot2 colour scale generation function for HUD styles.
 }
 \examples{
-hud_colours(medium = "web", colours = 2)
+hud_colours(2, palette_type = "single", medium = "web")
 }
 \keyword{colours}
 \keyword{ggplot2}

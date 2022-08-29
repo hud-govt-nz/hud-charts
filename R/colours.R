@@ -1,3 +1,5 @@
+library(ggplot2)
+
 #' HUD Colours
 #'
 #' ggplot2 colour scale generation function for HUD styles.
@@ -5,16 +7,13 @@
 #' @param colours Required number of colours
 #' @param palette_type Scheme type: "single", "double", "categorical"
 #' @param medium "print" (white background theme) or "web" (dark background theme)
-#' @param reverse Whether to reverse the colour scheme - on by default
+#' @param reverse Whether to reverse the colour scheme - on by default. This means
+#' the last series (which is on the top layer of the chart) gets the first colour
+#' in the palette
 #' @keywords hud ggplot2 colours
 #' @export
 #' @examples
 #' hud_colours(2, palette_type = "single", medium = "web")
-
-library(ggplot2)
-
-# Reverse colours by default, this means the last series (which is on the top
-# layer of the chart) gets the first colour in the palette
 hud_colours <- function(palette_size = 5, palette_type = "categorical", medium = "web", reverse = TRUE) {
   # Pick a palette
   palette <- NULL

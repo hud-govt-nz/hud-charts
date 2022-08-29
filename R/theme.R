@@ -1,14 +1,3 @@
-#' HUD Themes
-#'
-#' ggplot2 theme generator using HUD styles.
-#' @name hud_theme
-#' @param medium "web" (dark background theme) or "print" (white background theme)
-#' @param layout "big" or "small
-#' @keywords hud ggplot2 themes
-#' @export
-#' @examples
-#' hud_theme(medium = "web", layout = "big")
-
 library(ggplot2)
 library(showtext)
 
@@ -38,6 +27,16 @@ load_fonts <- function() {
   showtext_auto()
 }
 
+#' HUD Theme
+#'
+#' ggplot2 theme generator using HUD styles.
+#' @name hud_theme
+#' @param medium "web" (dark background theme) or "print" (white background theme)
+#' @param layout "big" or "small
+#' @keywords hud ggplot2 themes
+#' @export
+#' @examples
+#' hud_theme(medium = "web", layout = "big")
 hud_theme <- function(medium = "web", layout = "big") {
   load_fonts()
 

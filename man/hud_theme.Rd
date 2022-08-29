@@ -2,14 +2,17 @@
 % Please edit documentation in R/theme.R
 \name{hud_theme}
 \alias{hud_theme}
-\title{HUD Themes}
+\title{HUD Theme}
+\usage{
+hud_theme(medium = "web", layout = "big")
+}
 \arguments{
-\item{medium}{"print" (white background theme) or "web" (dark background theme)}
+\item{medium}{"web" (dark background theme) or "print" (white background theme)}
 
 \item{layout}{"big" or "small}
 }
 \description{
-ggplot2 theme generation function for HUD styles.
+ggplot2 theme generator using HUD styles.
 }
 \examples{
 hud_theme(medium = "web", layout = "big")
