@@ -2,7 +2,6 @@ library(devtools)
 install_github("hud-govt-nz/hud-charts", force = TRUE)
 
 library(tidyverse)
-library(showtext)
 library(hud.charts)
 
 # Last five years

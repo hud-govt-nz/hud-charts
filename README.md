@@ -57,7 +57,6 @@ roxygenise()
 A full set of examples are provided in `example/`. This is a basic workflow using the pre-made charts:
 ```R
 library(tidyverse)
-library(showtext)
 library(hud.charts)
 
 # Last five years
@@ -99,7 +98,6 @@ If you're doing more complicated stuff, you will want to generate the charts you
 then add `hud_theme()` and `hud_colours()` separately, e.g.:
 ```R
 library(tidyverse)
-library(showtext)
 library(hud.charts)
 
 # Last five years

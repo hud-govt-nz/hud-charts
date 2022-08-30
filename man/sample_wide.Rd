@@ -5,7 +5,7 @@
 \alias{sample_wide}
 \title{Sample wide data}
 \format{
-An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 21 rows and 4 columns.
+An object of class \code{spec_tbl_df} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 188 rows and 8 columns.
 }
 \usage{
 sample_wide

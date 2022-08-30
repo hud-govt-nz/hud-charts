@@ -1,6 +1,3 @@
-library(ggplot2)
-library(showtext)
-
 # This is a crummy way to find the font path, but here() and sys.frame(1)$ofile don't work
 find_path <- function() {
   for (lp in .libPaths()) {
@@ -22,9 +19,9 @@ load_fonts <- function() {
     c("National Bold", "national-web-bold.ttf")
   )
   for (f in fonts) {
-    font_add(f[1], paste(font_path, f[2], sep = "/"))
+    sysfonts::font_add(f[1], paste(font_path, f[2], sep = "/"))
   }
-  showtext_auto()
+  showtext::showtext_auto()
 }
 
 #' HUD Theme

@@ -1,13 +1,9 @@
-library(tidyverse)
-library(ggplot2)
-library(showtext)
-
 #' Sample wide data
 #'
 #' Housing register data in wide format
 #' @name sample_wide
 #' @export
-sample_wide <- read_csv("R/sample-data/rental-price-index-wide.csv", show_col_types = FALSE)
+sample_wide <- readr::read_csv("R/sample-data/rental-price-index-wide.csv", show_col_types = FALSE)
 
 #' Wide-to-Long
 #'

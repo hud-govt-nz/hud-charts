@@ -1,5 +1,3 @@
-library(ggplot2)
-
 #' HUD Colours
 #'
 #' ggplot2 colour scale generation function for HUD styles.
