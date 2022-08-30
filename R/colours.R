@@ -28,18 +28,18 @@ hud_colours <- function(palette_size = 5, palette_type = "categorical", medium =
     }
     # Categorical colours
     else if (palette_type == "categorical") {
-      palette <- c("#003E52", "#A4343E", "#00826E", "#FFB219", "#FFB219")
+      palette <- c("#003E52", "#A4343E", "#00826E", "#FFB219", "#62B6F3")
     }
   }
   else if (medium == "web") {
     if (palette_type == "single") {
-      palette <- c("#00232F", "#D0E3EF")
+      palette <- c("#FFC04A", "#806E4D")
     }
     else if (palette_type == "double") {
       palette <- c("#FFC04A", "#62B6F3")
     }
     else if (palette_type == "categorical") {
-      palette <- c("#FFC04A", "#DF8881", "#00C48D", "#62B6F3")
+      palette <- c("#FFC04A", "#DF8881", "#00C48D", "#62B6F3", "#C381DF")
     }
   }
 

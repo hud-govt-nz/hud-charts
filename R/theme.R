@@ -61,7 +61,7 @@ hud_theme <- function(medium = "web", layout = "big") {
                axis.text          = element_text(color = "#FFFFFF"),
                plot.title         = element_text(color = "#FFFFFF"),
                plot.caption       = element_text(color = "#CCCCCC"),
-               panel.grid.major.y = element_line(color = "#666666"))
+               panel.grid.major.y = element_line(color = "#333333"))
   }
   else if (medium == "print") {
     c <- theme(plot.background    = element_rect(fill = "#FFFFFF"),
