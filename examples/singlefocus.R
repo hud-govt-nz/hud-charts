@@ -14,7 +14,8 @@ s <- c("National" = "CPIM.SE9041F",
 
 # Read and clean
 df_long <-
-  make_long(sample_wide, s, x = "period") %>%
+  hud.charts::sample_wide %>%
+  make_long(s, x = "period") %>%
   filter(period >= targ_period[1], period <= targ_period[2])
 
 # Plot using HUD themes and colours
