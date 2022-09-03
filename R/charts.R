@@ -106,6 +106,6 @@ plot_regional_lines <- function(
     palette_type = "categorical", medium = "print", layout = "big",
     c = "series", x = "period", y = "value") {
   plot_line(df_reg, palette_type, medium, layout, c, x, y) +
-    facet_wrap(df_reg[[r]], ncol = ncols) +
+    facet_wrap(factor(df_reg[[r]]), ncol = ncols) +
     theme(panel.grid.major.y = element_line(color = "#E6E6E6"))
 }
