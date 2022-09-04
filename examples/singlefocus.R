@@ -13,7 +13,7 @@ s <- c("National" = "CPIM.SE9041F",
 
 # Read and clean
 df_long <-
-  hud.charts::sample_wide %>%
+  charts_test_data() %>%
   make_long(s, x = "period") %>%
   filter(period >= targ_period[1], period <= targ_period[2])
 
@@ -39,7 +39,7 @@ scale_y_continuous(
 # # Full version for reference, same results as above
 # # Read and clean
 # df_long <-
-#   sample_wide %>%
+#   charts_test_data() %>%
 #   select(period, all_of(s)) %>% # Selects target columns using pretty names
 #   pivot_longer(-period, names_to = "series") %>%
 #   mutate(period = as.Date(period), # Must use date types

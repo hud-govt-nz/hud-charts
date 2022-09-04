@@ -1,25 +1,16 @@
-# This is a crummy way to find the font path, but here() and sys.frame(1)$ofile don't work
-find_path <- function() {
-  for (lp in .libPaths()) {
-    p <- paste(lp, "hud.charts/fonts", sep = "/")
-    if (dir.exists(p)) return(p)
-    else print(p)
-  }
-}
-
 load_fonts <- function() {
   font_path <- find_path()
   fonts <- list(
-    c("National", "national-web-regular.ttf"),
-    c("National Black", "national-web-black.ttf"),
-    c("National Book", "national-web-book.ttf"),
-    c("National Light", "national-web-light.ttf"),
-    c("National Medium", "national-web-medium.ttf"),
-    c("National SemiBold", "national-web-semibold.ttf"),
-    c("National Bold", "national-web-bold.ttf")
+    c("National", "/fonts/national-web-regular.ttf"),
+    c("National Black", "/fonts/national-web-black.ttf"),
+    c("National Book", "/fonts/national-web-book.ttf"),
+    c("National Light", "/fonts/national-web-light.ttf"),
+    c("National Medium", "/fonts/national-web-medium.ttf"),
+    c("National SemiBold", "/fonts/national-web-semibold.ttf"),
+    c("National Bold", "/fonts/national-web-bold.ttf")
   )
   for (f in fonts) {
-    sysfonts::font_add(f[1], paste(font_path, f[2], sep = "/"))
+    sysfonts::font_add(f[1], paste0(font_path, f[2]))
   }
   showtext::showtext_auto()
 }
