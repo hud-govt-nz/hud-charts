@@ -35,24 +35,6 @@ A few options are reference by most of the functions.
 * categorical: Categories
 
 
-## Maintaining this package
-If you make changes to this package, you'll need to rerun document from the root directory to update all the R generated files.
-```R
-library(roxygen2)
-roxygenise()
-```
-
-I had real problems installing `roxygen2`, because there's a problem with the upstream library `cli`. It's been fixed, but it's not in the CRAN version as of 29-08-2022. You might need the Github version:
-```R
-library(devtools)
-install_github("r-lib/cli")
-install_github("r-lib/roxygen2")
-library(cli)
-library(roxygen2)
-roxygenise()
-```
-
-
 ## Examples
 A full set of examples are provided in `example/`. This is a basic workflow using the pre-made charts:
 ```R
@@ -143,4 +125,22 @@ scale_y_continuous(
   name = NULL,
   limits = c(NA, NA),
   labels = scales::label_percent(scale = 100))
+```
+
+
+## Maintaining this package
+If you make changes to this package, you'll need to rerun document from the root directory to update all the R generated files.
+```R
+library(roxygen2)
+roxygenise()
+```
+
+I had real problems installing `roxygen2`, because there's a problem with the upstream library `cli`. It's been fixed, but it's not in the CRAN version as of 29-08-2022. You might need the Github version:
+```R
+library(devtools)
+install_github("r-lib/cli")
+install_github("r-lib/roxygen2")
+library(cli)
+library(roxygen2)
+roxygenise()
 ```
