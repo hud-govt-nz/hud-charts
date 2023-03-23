@@ -47,6 +47,7 @@ hud_theme <- function(medium = "web", layout = "big") {
                legend.background  = element_rect(fill = "#00232F"),
                text               = element_text(color = "#FFFFFF"),
                axis.text          = element_text(color = "#FFFFFF"),
+               axis.ticks.x       = element_line(color = "#BFBFBF"),
                plot.title         = element_text(color = "#FFFFFF"),
                plot.caption       = element_text(color = "#CCCCCC"),
                panel.grid.major.y = element_line(color = "#333333"))
@@ -56,6 +57,7 @@ hud_theme <- function(medium = "web", layout = "big") {
                legend.background  = element_rect(fill = "#FFFFFF"),
                text               = element_text(color = "#222423"),
                axis.text          = element_text(color = "#222423"),
+               axis.ticks.x       = element_line(color = "#626463"),
                plot.title         = element_text(color = "#00232F"),
                plot.caption       = element_text(color = "#909090"),
                panel.grid.major.y = element_line(color = "#F1F1F1"))
