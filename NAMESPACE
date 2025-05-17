@@ -2,6 +2,7 @@
 
 export(charts_test_data)
 export(hud_colours)
+export(hud_palette)
 export(hud_theme)
 export(make_long)
 export(make_regional)
