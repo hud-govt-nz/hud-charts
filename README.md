@@ -4,8 +4,7 @@
 ## Installation
 You'll need `devtools::install_github` to install the package:
 ```R
-library(devtools)
-install_github("hud-govt-nz/hud-charts")
+devtools::install_github("hud-govt-nz/hud-charts")
 ```
 
 
