@@ -130,6 +130,5 @@ scale_y_continuous(
 ## Maintaining this package
 If you make changes to this package, you'll need to rerun document from the root directory to update all the R generated files.
 ```R
-library(roxygen2)
-roxygenise()
+roxygen2::roxygenise()
 ```
