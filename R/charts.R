@@ -72,7 +72,7 @@ plot_line <- function(
     c = "series", x = "period", y = "value") {
   ggplot(df_long,
     aes(color = !!sym(c), x = !!sym(x), y = !!sym(y))) +
-    geom_line(size = 1) +
+    geom_line(linewidth = 1) +
     hud_theme(medium, layout) +
     hud_colours(nlevels(df_long[[c]]), palette_type, medium)
 }
