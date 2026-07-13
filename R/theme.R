@@ -1,13 +1,12 @@
 load_fonts <- function() {
   font_path <- find_path()
   fonts <- list(
-    c("National", "/fonts/national-web-regular.ttf"),
-    c("National Black", "/fonts/national-web-black.ttf"),
-    c("National Book", "/fonts/national-web-book.ttf"),
-    c("National Light", "/fonts/national-web-light.ttf"),
-    c("National Medium", "/fonts/national-web-medium.ttf"),
-    c("National SemiBold", "/fonts/national-web-semibold.ttf"),
-    c("National Bold", "/fonts/national-web-bold.ttf")
+    c("Ancizar", "/fonts/AncizarSerif-Regular.ttf"),
+    c("Ancizar Black", "/fonts/AncizarSerif-Black.ttf"),
+    c("Ancizar Light", "/fonts/AncizarSerif-Light.ttf"),
+    c("Ancizar Medium", "/fonts/AncizarSerif-Medium.ttf"),
+    c("Ancizar SemiBold", "/fonts/AncizarSerif-SemiBold.ttf"),
+    c("Ancizar Bold", "/fonts/AncizarSerif-Bold.ttf")
   )
   for (f in fonts) {
     sysfonts::font_add(f[1], paste0(font_path, f[2]))
@@ -29,9 +28,9 @@ hud_theme <- function(medium = "web", layout = "big") {
   load_fonts()
 
   # Base
-  b <- theme(text             = element_text(family = "National Light"),
-             title            = element_text(family = "National"),
-             plot.title       = element_text(family = "National Bold"),
+  b <- theme(text             = element_text(family = "Ancizar Light"),
+             title            = element_text(family = "Ancizar"),
+             plot.title       = element_text(family = "Ancizar Bold"),
              axis.ticks       = element_blank(),
              panel.background = element_blank(),
              panel.border     = element_blank(),
@@ -43,8 +42,8 @@ hud_theme <- function(medium = "web", layout = "big") {
 
   # Medium
   if (medium == "web") {
-    c <- theme(plot.background    = element_rect(fill = "#00232F"),
-               legend.background  = element_rect(fill = "#00232F"),
+    c <- theme(plot.background    = element_rect(fill = "#103039"),
+               legend.background  = element_rect(fill = "#103039"),
                text               = element_text(color = "#FFFFFF"),
                axis.text          = element_text(color = "#FFFFFF"),
                axis.ticks.x       = element_line(color = "#BFBFBF"),
@@ -55,10 +54,10 @@ hud_theme <- function(medium = "web", layout = "big") {
   else if (medium == "print") {
     c <- theme(plot.background    = element_rect(fill = "#FFFFFF"),
                legend.background  = element_rect(fill = "#FFFFFF"),
-               text               = element_text(color = "#222423"),
-               axis.text          = element_text(color = "#222423"),
+               text               = element_text(color = "#103039"),
+               axis.text          = element_text(color = "#103039"),
                axis.ticks.x       = element_line(color = "#626463"),
-               plot.title         = element_text(color = "#00232F"),
+               plot.title         = element_text(color = "#103039"),
                plot.caption       = element_text(color = "#909090"),
                panel.grid.major.y = element_line(color = "#F1F1F1"))
   }

@@ -12,32 +12,32 @@
 #' @export
 #' @examples
 #' hud_palette(2, palette_type = "single", medium = "web")
-hud_palette <- function(palette_size = 5, palette_type = "categorical", medium = "web", reverse = TRUE) {
+hud_palette <- function(palette_size = 5, palette_type = "categorical", medium = "web", reverse = FALSE) {
   # Pick a palette
   palette <- NULL
   if (medium == "print") {
     # Focus on a primary series, with an optional secondary series
     if (palette_type == "single") {
-      palette <- c("#00232F", "#D0E3EF")
+      palette <- c("#005B73", "#AAD7DF")
     }
     # Focus on two series
     else if (palette_type == "double") {
-      palette <- c("#00232F", "#FFC04A")
+      palette <- c("#005B73", "#652F8F")
     }
     # Categorical colours
     else if (palette_type == "categorical") {
-      palette <- c("#003E52", "#A4343E", "#00826E", "#FFB219", "#62B6F3")
+      palette <- c("#652F8F", "#3D612D", "#0D2C6B", "#006AC6", "#005B73")
     }
   }
   else if (medium == "web") {
     if (palette_type == "single") {
-      palette <- c("#FFC04A", "#806E4D")
+      palette <- c("#8CC8D3", "#005B73")
     }
     else if (palette_type == "double") {
-      palette <- c("#FFC04A", "#62B6F3")
+      palette <- c("#8CC8D3", "#35A1AD")
     }
     else if (palette_type == "categorical") {
-      palette <- c("#FFC04A", "#DF8881", "#00C48D", "#62B6F3", "#C381DF")
+      palette <- c("#B384D7", "#A1CC8F", "#6E98ED", "#5CB3FF", "#5CDCFF")
     }
   }
 
