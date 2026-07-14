@@ -1,11 +1,9 @@
-library(devtools)
-install_github("hud-govt-nz/hud-charts", force = TRUE)
-
+# devtools::install_github("hud-govt-nz/hud-charts", force = TRUE)
 library(tidyverse)
 library(hud.charts)
 
 # Last five years
-targ_period <- c(Sys.Date() - 365 * 5, Sys.Date())
+targ_period <- c(as.Date('2017-01-01'), as.Date('2022-06-01'))
 
 # Set series order (most important series first)
 s <- c("Rest of South Island" = "CPIM.SE6041F",
