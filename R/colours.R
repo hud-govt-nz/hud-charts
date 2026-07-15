@@ -20,24 +20,17 @@ hud_palette <- function(palette_size = 5, palette_type = "categorical", medium =
     if (palette_type == "single") {
       palette <- c("#005B73", "#AAD7DF")
     }
-    # Focus on two series
-    else if (palette_type == "double") {
-      palette <- c("#005B73", "#652F8F")
-    }
     # Categorical colours
-    else if (palette_type == "categorical") {
-      palette <- c("#652F8F", "#3D612D", "#0D2C6B", "#006AC6", "#005B73")
+    else if (palette_type %in% c("double", "categorical")) {
+      palette <- c("#005B73", "#217300", "#731900", "#520073", "#757100", "#75003E", "#000475", "#007537")
     }
   }
   else if (medium == "web") {
     if (palette_type == "single") {
       palette <- c("#8CC8D3", "#005B73")
     }
-    else if (palette_type == "double") {
-      palette <- c("#8CC8D3", "#35A1AD")
-    }
-    else if (palette_type == "categorical") {
-      palette <- c("#B384D7", "#A1CC8F", "#6E98ED", "#5CB3FF", "#5CDCFF")
+    else if (palette_type %in% c("double", "categorical")) {
+      palette <- c("#5CDCFF", "#8AFF5C", "#FF7F5C", "#D15CFF", "#FFFA5C", "#FF5CB3", "#5C61FF", "#5CFFA8")
     }
   }
 
