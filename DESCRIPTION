@@ -2,7 +2,7 @@ Package: hud.charts
 Title: HUD charting utilities
 Version: 0.0.0.9000
 Authors@R:
-    person("Keith", "Ng", , "keith.ng@hud.govt.nz", role = c("aut", "cre"),
+    person("Keith", "Ng", , "keith.ng@mcert.govt.nz", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: HUD charting utilities (chart functions, themes, colours)
 License: `use_mit_license()`
